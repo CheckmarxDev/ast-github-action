@@ -38,6 +38,7 @@ runs:
     - ${{ inputs.github_token }}
     - ${{ inputs.scan_types }}
     - ${{ inputs.project_name }}
+    - ${{ inputs.additional_params }}
     - ${{ inputs.filter }}
 
   env:
@@ -46,7 +47,7 @@ runs:
     GITHUB_TOKEN: ${{ inputs.github_token }}
     SCAN_TYPES: ${{ inputs.scan_types }}
     PROJECT_NAME: ${{ inputs.project_name }}
-    ADDITIONAL_PARAMS: ${{ inputs.additional_params }}
+    ADDITIONAL_PARAMS: "${{ inputs.additional_params }}"
     FILTER: ${{ inputs.filter }}
 
 branding:
