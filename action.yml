@@ -18,10 +18,6 @@ inputs:
     required: false
     default: ${{ github.repository }} # default repo name
     description: 'Select a Checkmarx Project Name'
-  source_directory:
-    required: false
-    default: '.'
-    description: 'Source for the project directory'
   filter:
     required: false
     default: '*'
@@ -52,7 +48,6 @@ runs:
     GITHUB_TOKEN: ${{ inputs.github_token }}
     SCAN_TYPES: ${{ inputs.scan_types }}
     PROJECT_NAME: ${{ inputs.project_name }}
-    SOURCE_DIRECTORY: ${{ inputs.source_directory }}
     ADDITIONAL_PARAMS: ${{ inputs.additional_params }}
     FILTER: ${{ inputs.filter }}
 
