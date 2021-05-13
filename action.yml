@@ -38,8 +38,6 @@ runs:
     - ${{ inputs.github_token }}
     - ${{ inputs.scan_types }}
     - ${{ inputs.project_name }}
-    - ${{ inputs.source_directory }}
-    - ${{ inputs.additional_params }}
     - ${{ inputs.filter }}
 
   env:
