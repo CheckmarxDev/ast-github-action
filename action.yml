@@ -3,7 +3,7 @@ description: 'Simplify Checkmarx Scanning of source code along with Result consu
 author: 'Checkmarx Technical Services'
 inputs:
   base_uri:
-    required: true
+    required: false
     description: 'Provide the AST portal URL'
     default: 'http://demo.ast-cloud.com'
   cx_apikey:
@@ -11,7 +11,7 @@ inputs:
     description: 'Token for AST portal authentication'
     default: ''
   scan_types:
-    required: true
+    required: false
     description: 'Scan types to perform on AST'
     default: ''
   project_name:
