@@ -33,6 +33,8 @@ runs:
   using: 'docker'
   image: 'docker://cxsdlc/ast-cli:latest'
   args:
+    - scan
+    - create
     - --help
 
 
