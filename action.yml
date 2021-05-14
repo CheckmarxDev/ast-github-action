@@ -33,10 +33,18 @@ runs:
   using: 'docker'
   image: 'docker://cxsdlc/ast-cli:latest'
   args:
-    - scan
+    - scan 
     - create
-    - --help
-
+    - --scan-types
+    - ${{ inputs.scan_types }}
+    - --apikey
+    - ${{ inputs.cx_apikey }}
+    - --project-name
+    - ${{ inputs.project_name }}
+    - -d
+    - .
+    - ${{ inputs.additional_params }}
+    - ${{ inputs.filter }}
 
   env:
     CX_BASE_URI: "${{ inputs.base_uri }}"
