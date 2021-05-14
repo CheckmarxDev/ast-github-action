@@ -33,7 +33,7 @@ runs:
   using: 'docker'
   image: 'docker://cxsdlc/ast-cli:latest'
   args:
-    - scan create
+    - cx scan create
     - --scan-types
     - ${{ inputs.scan_types }}
     - --apikey
