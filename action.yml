@@ -20,7 +20,7 @@ inputs:
     description: 'Select a Checkmarx Project Name'
   filter:
     required: false
-    default: '*'
+    default: ''
     description: 'Project scan filters for AST'
   additional_params:
     required: false
@@ -31,13 +31,16 @@ outputs:
     description: output from cli
 runs:
   using: 'docker'
-  image: 'Dockerfile'
+  image: 'docker://cxsdlc/ast-cli:latest'
   args:
-    - ${{ inputs.base_uri }}
-    - ${{ inputs.cx_apikey }}
-    - ${{ inputs.github_token }}
+    - scan create
+    - --scan-types
     - ${{ inputs.scan_types }}
+    - --apikey
+    - ${{ inputs.cx_apikey }}
+    - --project-name
     - ${{ inputs.project_name }}
+    - -d .
     - ${{ inputs.additional_params }}
     - ${{ inputs.filter }}
 
