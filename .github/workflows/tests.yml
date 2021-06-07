@@ -54,9 +54,9 @@ jobs:
           cx_client_secret: ${{ secrets.CX_CLIENT_SECRET }}
           cx_tenant: organization
           scan_types: sast
-          additional_params: --sast-preset-name "Chekmarx Default Pedro" --sast-incremental false
+          additional_params: --sast-preset-name "Chekmarx Default" --sast-incremental false
       - name: Check if preset name completed
-        if: ${{ contains( steps.preset_name_test.outputs.cxcli, 'Completed') == false}}
+        if: ${{ contains( steps.preset_name_test.outputs.cxcli, 'Scan finished') == false}}
         run: |
           echo "The cli failed"
           exit 1
