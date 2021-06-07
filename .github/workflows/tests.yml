@@ -35,7 +35,7 @@ jobs:
           base_auth_uri: https://iam-master.dev.cxast.net/
           cx_client_id: ${{ secrets.CX_CLIENT_ID }}
           cx_client_secret: ${{ secrets.CX_CLIENT_SECRET }}
-          cx_tenant: 'Organization'
+          cx_tenant: organization
           scan_types: sast,kics,sca
       - name: Check if completed
         if: ${{ contains( steps.valid_scenario.outputs.cxcli, 'Completed') == false}}
@@ -52,7 +52,7 @@ jobs:
           base_auth_uri: https://iam-master.dev.cxast.net/
           cx_client_id: ${{ secrets.CX_CLIENT_ID }}
           cx_client_secret: ${{ secrets.CX_CLIENT_SECRET }}
-          cx_tenant: 'Organization'
+          cx_tenant: organization
           scan_types: sast
           additional_params: --sast-preset-name "Chekmarx Default Pedro" --sast-incremental false
       - name: Check if preset name completed
