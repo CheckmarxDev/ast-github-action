@@ -32,6 +32,7 @@ jobs:
         with:
           project_name: Integration project
           base_uri: https://ast-master.dev.cxast.net/
+          base_auth_uri: https://iam-master.dev.cxast.net/
           cx_client_id: ${{ secrets.CX_CLIENT_ID }}
           cx_client_secret: ${{ secrets.CX_CLIENT_SECRET }}
           scan_types: sast,kics,sca
@@ -47,6 +48,7 @@ jobs:
         with:
           project_name: Integration project
           base_uri: https://ast-master.dev.cxast.net/
+          base_auth_uri: https://iam-master.dev.cxast.net/
           cx_client_id: ${{ secrets.CX_CLIENT_ID }}
           cx_client_secret: ${{ secrets.CX_CLIENT_SECRET }}
           scan_types: sast

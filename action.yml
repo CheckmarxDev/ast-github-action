@@ -6,6 +6,10 @@ inputs:
     required: true
     description: 'Provide the AST portal URL'
     default: 'http://demo.ast-cloud.com'
+  base_auth_uri:
+    required: true
+    description: 'Provide the AST auth portal URL'
+    default: 'http://demo-auth.ast-cloud.com'
   cx_tenant:
     required: true
     description: 'Provide the Tenant for AST portal URL'
@@ -50,6 +54,7 @@ runs:
   image: 'Dockerfile'
   args:
     - ${{ inputs.base_uri }}
+    - ${{ inputs.base_auth_uri }}
     - ${{ inputs.cx_tenant }}
     - ${{ inputs.cx_client_id }}
     - ${{ inputs.cx_client_secret }}
@@ -62,6 +67,7 @@ runs:
 
   env:
     CX_BASE_URI: "${{ inputs.base_uri }}"
+    CX_BASE_AUTH_URI: "${{ inputs.base_auth_uri }}"
     CX_TENANT: ${{ inputs.cx_tenant }}
     CX_CLIENT_ID: ${{ inputs.cx_client_id }}
     CX_CLIENT_SECRET: ${{ inputs.cx_client_secret }}
